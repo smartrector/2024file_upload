@@ -14,7 +14,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.1",
-    "mine-type": "^1.0.0",
+    "mime-types": "^2.1.35",
     "mongoose": "^8.2.3",
     "multer": "^1.4.5-lts.1",
     "uuid": "^9.0.1"
