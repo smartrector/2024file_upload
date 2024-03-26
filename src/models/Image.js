@@ -3,8 +3,8 @@ const {default: mongoose} = require("mongoose");
 const ImageSchema = mongoose.Schema(
   {
     title: {type: String, required: true},
-    filename: {type: String, required: true},
-    originalFileName: {type: String, required: true},
+    content: {type: String, required: true},
+    images: [{filename: String, originalname: String}],
   },
   {timestamps: true}
 );
