@@ -1,0 +1,50 @@
+{
+    _id:"1111",
+    title:"title",
+    content:"내용",
+    user:{
+        username:"dd",
+        useremail:"email",
+        age:10
+    },
+    comment:[
+        {
+            title:"제목",
+            user:{
+                username:"dd",
+                useremail:"email",
+                age:10
+            },
+    },{
+        title:"제목",
+        user:{
+            username:"dd",
+            useremail:"email",
+            age:10
+        },
+    },{
+    title:"제목",
+    user:{
+        username:"dd",
+        useremail:"email",
+        age:10
+    },
+    },{
+    title:"제목",
+    user:{
+        username:"dd",
+        useremail:"email",
+        age:10
+    },
+    },{
+    title:"제목",
+    user:{
+        username:"dd",
+        useremail:"email",
+        age:10
+    },
+    },
+
+
+    ]
+}
