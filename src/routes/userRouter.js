@@ -2,6 +2,7 @@ const {User} = require("../models/User");
 const express = require("express");
 const userRouter = express.Router();
 const {hash, compare} = require("bcryptjs");
+const {upload} = require("../middlewares/imageUpload");
 
 userRouter.post("/reg", async function (req, res) {
   try {
@@ -38,7 +39,7 @@ userRouter.post("/login", async function (req, res) {
   }
 });
 
-userRouter.get("/", async function (req, res) {
+userRouter.get("/member", async function (req, res) {
   try {
     const user = await User.find({});
     return res.send({user});
@@ -46,5 +47,27 @@ userRouter.get("/", async function (req, res) {
     return res.status(500).send({error: error.message});
   }
 });
+
+userRouter.put(
+  "/reg_modi/:userId",
+  upload.single("avatar"),
+  async function (req, res) {
+    try {
+      const userId = req.params.userId;
+      const {username} = req.body;
+      const {filename, originalname} = req.file;
+
+      const image = {filename, originalname};
+      const update = await User.findOneAndUpdate(
+        {_id: userId},
+        {username, image},
+        {new: true}
+      );
+      return res.send({update});
+    } catch (error) {
+      return res.status(500).send({error: error.message});
+    }
+  }
+);
 
 module.exports = {userRouter};
