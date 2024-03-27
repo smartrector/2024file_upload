@@ -4,6 +4,7 @@ const app = express();
 const dotenv = require("dotenv");
 
 const {imageRouter} = require("./routes/imageRouter");
+const {userRouter} = require("./routes/userRouter");
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ const server = async function () {
     app.use(express.json());
 
     app.use("/upload", imageRouter);
+    app.use("/user", userRouter);
 
     app.listen(3000);
   } catch (error) {
